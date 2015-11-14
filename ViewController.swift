@@ -208,27 +208,27 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
         
         if(searchText == "king library"){
             let scrollPoint = CGPointMake(-35, 1000)
-            plotImage = UIImageView(frame:CGRectMake(36, 262, 5, 5));
+            plotImage = UIImageView(frame:CGRectMake(36, 262, 15, 15))
             zoomImage(scrollPoint)
         }else if(searchText == "engineering building"){
             let scrollPoint = CGPointMake(680, 445)
-            plotImage = UIImageView(frame:CGRectMake(176, 142, 5, 5));
+            plotImage = UIImageView(frame:CGRectMake(176, 142, 15, 15))
             zoomImage(scrollPoint)
         }else if (searchText == "yoshihiro uchida hall"){
             let scrollPoint = CGPointMake(250, 1800)
-            plotImage = UIImageView(frame:CGRectMake(89, 421, 5, 5));
+            plotImage = UIImageView(frame:CGRectMake(89, 421, 15, 15))
             zoomImage(scrollPoint)
         }else if(searchText == "student union"){
             let scrollPoint = CGPointMake(820, 740)
-            plotImage = UIImageView(frame:CGRectMake(200, 200, 5, 5));
+            plotImage = UIImageView(frame:CGRectMake(200, 200, 15, 15))
             zoomImage(scrollPoint)
         }else if (searchText == "bbc"){
             let scrollPoint = CGPointMake(1300, 530)
-            plotImage = UIImageView(frame:CGRectMake(293, 170, 5, 5));
+            plotImage = UIImageView(frame:CGRectMake(293, 170, 15, 15))
             zoomImage(scrollPoint)
         }else if (searchText == "south parking garage"){
             let scrollPoint = CGPointMake(850, 2030)
-            plotImage = UIImageView(frame:CGRectMake(207, 467, 5, 5));
+            plotImage = UIImageView(frame:CGRectMake(207, 467, 15, 15))
             zoomImage(scrollPoint)
         }else{
             let alertController = UIAlertController(title: "Search Failed", message:"Wrong Search. Choose from King Library, Engineering Building, Yoshihiro Uchida Hall, Student Union, BBC, South Parking Garage", preferredStyle: UIAlertControllerStyle.Alert)
@@ -241,7 +241,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
     func zoomImage(scrollPoint: CGPoint){
         scrollview.setZoomScale(5, animated: false)
         scrollview.setContentOffset(scrollPoint, animated: false)
-        plotImage!.image = UIImage(named:"plot.png")
+        plotImage!.image = UIImage(named:"green.png")
         self.imageview.addSubview(plotImage!)
     }
     
@@ -290,9 +290,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
         let y_new = Double( imageHeight) - (Double( imageHeight) * (fabs(userLatitude)-37.331361)/(37.338800-37.331361))
         var pinImageView : UIImageView
         
-        pinImageView = UIImageView(frame: CGRectMake(CGFloat(x_new), CGFloat( y_new), 5, 5))
+        pinImageView = UIImageView(frame: CGRectMake(CGFloat(x_new), CGFloat( y_new), 15, 15))
         
-        pinImageView.image = UIImage(named: "pin_location.png")
+        pinImageView.image = UIImage(named: "red.png")
         self.imageview.addSubview(pinImageView)
         
     }
